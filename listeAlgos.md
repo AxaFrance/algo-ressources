@@ -6,3 +6,4 @@ L'idée de ce fichier n'est pas d'établir une liste des algorithmes existants, 
 
 - Couplage maximum / Maximum bipartite matching 
 - Tail récursif
+- Lempel Ziv (LZ77, LZ78 ou LZW) : C'est un algo de compression de données
