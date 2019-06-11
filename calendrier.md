@@ -8,7 +8,7 @@ Prochainement avant le 23 août : [ACM-ICFP](http://icfpconference.org/contest.h
 
 29 Septembre 2019 : Google [kickstart](https://codingcompetitions.withgoogle.com/kickstart) (Round F) - entraînement
 
-Septembre-Octobre 2019 : [Meilleur dev de France](https://www.meilleurdevdefrance.com/) ([solutions anciens exercices](https://www.isograd.com/FR/solutionconcours.php)) /!\ sûrement payant
+17 octobre 2019 : [Meilleur dev de France](https://www.meilleurdevdefrance.com/) ([solutions anciens exercices](https://www.isograd.com/FR/solutionconcours.php)) /!\ sûrement payant
 
 19 Octobre 2019 : Google [kickstart](https://codingcompetitions.withgoogle.com/kickstart) (Round G) - entraînement
 
