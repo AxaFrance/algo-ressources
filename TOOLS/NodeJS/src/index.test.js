@@ -5,7 +5,8 @@ import path from "path";
 
 
 //1,2,3,4,5,6 => exclude input/output 1,2,3,4,5,6
-const exclude = [4, 5,6, 7, 8, 9, 10, 11, 12];
+const exclude = [
+];
 
 
 const files = fs.readdirSync(path.resolve(path.join(__dirname, "examples"))).filter((filename) => !filename.startsWith("."));
