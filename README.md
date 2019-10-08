@@ -1,3 +1,8 @@
-# algo-ressources
+# mdf2018axa
 
-[Lien du tools pour le MDF](https://github.com/johnmeunier/mdf2018axa/tree/master/TOOLS)
+Share useful ressources
+
+## Links
+
+- https://www.isograd.com/FR/solutionconcours.php
+- https://www.codewars.com/
