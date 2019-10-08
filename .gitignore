@@ -1,0 +1,14 @@
+.DS_Store
+
+#JAVA TOOLS
+TOOLS/Java/WorkspaceEclipseMDF/\.metadata/
+TOOLS/Java/WorkspaceEclipseMDF/\.recommenders/
+TOOLS/Java/WorkspaceEclipseMDF/mdf/\.settings/
+TOOLS/Java/WorkspaceEclipseMDF/mdf/bin/
+
+#NODEJS TOOLS
+TOOLS/NodeJS/node_modules
+TOOLS/NodeJS/yarn-*
+TOOLS/NodeJS/yarn.lock
+TOOLS/NodeJS/dist/*
+TOOLS/NodeJS/src/examples
