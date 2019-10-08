@@ -1,0 +1,59 @@
+{
+  "name": "MDF2018",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.4.0",
+    "@babel/plugin-external-helpers": "7.2.0",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.0",
+    "@babel/plugin-syntax-object-rest-spread": "7.2.0",
+    "@babel/plugin-transform-object-assign": "7.2.0",
+    "@babel/plugin-transform-parameters": "7.4.0",
+    "@babel/plugin-transform-runtime": "7.4.0",
+    "@babel/polyfill": "7.4.0",
+    "@babel/preset-env": "7.4.2",
+    "@babel/preset-es2015": "7.0.0-beta.53",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "24.5.0",
+    "babel-plugin-lodash": "3.3.4",
+    "babel-plugin-transform-builtin-extend": "1.1.2",
+    "babelrc-rollup": "3.0.0",
+    "bipartite-matching": "1.0.0",
+    "copy-paste": "1.3.0",
+    "core-js": "3.0.0",
+    "jest": "24.5.0",
+    "js-combinatorics": "0.5.4",
+    "js-graph-algorithms": "1.0.18",
+    "munkres-js": "1.2.2",
+    "node-kruskal": "0.0.4",
+    "npm-run-all": "4.1.5",
+    "pathfinding": "0.4.18",
+    "regenerator-runtime": "0.13.2",
+    "rollup": "1.7.3",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-commonjs": "9.2.2",
+    "rollup-plugin-node-resolve": "4.0.1",
+    "watch": "1.0.2"
+  },
+  "dependencies": {
+    "lodash": "4.17.11"
+  },
+  "jest": {
+    "rootDir": "./",
+    "roots": [
+      "<rootDir>/src"
+    ]
+  },
+  "scripts": {
+    "start": "npm-run-all -p rollup watch:copy",
+    "test": "jest --watchAll --verbose false",
+    "test:unit": "jest",
+    "rollup": "rollup -c -w",
+    "watch:copy": "watch \"npm run copy\" ./dist --interval=1",
+    "copy": "node ./copy",
+    "upgrade": "yarn config set save-prefix \"\" && yarn && yarn upgrade-interactive --latest"
+  }
+}
