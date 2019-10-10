@@ -5,9 +5,7 @@ import path from "path";
 
 
 //1,2,3,4,5,6 => exclude input/output 1,2,3,4,5,6
-const exclude = [
-];
-
+const exclude = [ 2, 3 ]
 
 const files = fs.readdirSync(path.resolve(path.join(__dirname, "examples"))).filter((filename) => !filename.startsWith("."));
 const fileGroup = _.groupBy(files, (file) => {
