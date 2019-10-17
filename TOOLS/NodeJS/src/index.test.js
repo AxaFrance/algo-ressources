@@ -4,8 +4,11 @@ import fs from "fs";
 import path from "path";
 
 
-//1,2,3,4,5,6 => exclude input/output 1,2,3,4,5,6
-const exclude = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+//1,2,3,4,5,6 => exclude input/output
+//1,2,3,4,5,6,7,8,9,10,11,12
+const exclude = [
+];
+
 
 const files = fs.readdirSync(path.resolve(path.join(__dirname, "examples"))).filter((filename) => !filename.startsWith("."));
 const fileGroup = _.groupBy(files, (file) => {
@@ -25,8 +28,8 @@ describe("tests", () => {
     window.console.error = (log) => console.info(log);
     window.console.errorArray = (...logs) => logs.forEach((log) => console.info(log));
 
-    jsonContents.forEach(([input, outputs]) => {
-        test("process test", () => {
+    jsonContents.forEach(([input, outputs], i) => {
+        test(`process test input${i+1}`, () => {
             const result = content(_.cloneDeep(input));
 
             if (outputs.length === 1) {
