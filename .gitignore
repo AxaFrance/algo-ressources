@@ -11,4 +11,5 @@ TOOLS/NodeJS/node_modules
 TOOLS/NodeJS/yarn-*
 TOOLS/NodeJS/yarn.lock
 TOOLS/NodeJS/dist/*
-TOOLS/NodeJS/src/examples
+TOOLS/NodeJS/src/examples/*
+!TOOLS/NodeJS/src/examples/.gitkeep
