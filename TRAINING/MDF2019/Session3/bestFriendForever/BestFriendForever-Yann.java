@@ -9,15 +9,15 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class IsoContest {
+ public class IsoContest {
 
-	public static void main( String[] argv ) throws Exception {
+ 	public static void main( String[] argv ) throws Exception {
 		InputStream inputStream = System.in;
 		String response = doJob(inputStream);
 		System.out.print(response);
 	}
 
-	public static String doJob(InputStream inputStream) {
+ 	public static String doJob(InputStream inputStream) {
 		String  line;
 		Scanner sc = new Scanner(inputStream);
 		int nbPeople = sc.nextInt();
@@ -32,22 +32,29 @@ public class IsoContest {
 		}
 		HashSet<Integer> curList = new HashSet<Integer>();
 		int result = -1;
+		
+		if(relations[0] == null){
+		    return "-1";
+		}
 		for (int i = 1; i < relations.length; i++) {
 			HashSet<Integer> commonFriend = relations[i];
-			commonFriend.retainAll(relations[1]);
-			if(commonFriend.size() >= curList.size()) {
-				curList = commonFriend;
-				result = i+1;
+			if(commonFriend != null && commonFriend.size() > 0 && commonFriend.contains(0)){
+			    commonFriend.retainAll(relations[0]);
+    			if(commonFriend.size() >= curList.size() && commonFriend.size() > 0) {
+    			    
+    				curList = commonFriend;
+    				result = i+1;
+    			}
 			}
 		}
 		return ""+result;
 	}
 
-	private static void addRelation(Set<Integer>[] relations, String string, String string2) {
+ 	private static void addRelation(Set<Integer>[] relations, String string, String string2) {
 		int master = Integer.valueOf(string)-1;
 		int slave = Integer.valueOf(string2)-1;
 
-		if(relations[master] == null) {
+ 		if(relations[master] == null) {
 			relations[master] = new HashSet<Integer>();
 		}
 		relations[master].add(slave);
