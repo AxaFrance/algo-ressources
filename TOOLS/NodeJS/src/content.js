@@ -6,7 +6,7 @@ import _ from "lodash";
 import {
     ObjectMap, ObjectSet,
     sortAsc, sortDesc,
-    toGrid, toGridNumber, fillGrid, resultGridWithSpaces,
+    toGrid, toGridNumber, fillGrid, fillGridXY, resultGridWithSpaces,findStart,
     flipMatrix, flipMatrixCounterClockwise, rotateMatrix, rotateMatrixCounterClockwise
 } from "./tools";
 const logs = (...args) => console.error(args);
@@ -14,5 +14,5 @@ const logs = (...args) => console.error(args);
 //console.error( $variable );
 //return to send result
 export default (input) => {
-
+    input.shift();
 };
