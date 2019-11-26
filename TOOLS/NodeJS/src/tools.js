@@ -14,17 +14,18 @@ export const toGrid = (input, separator = "") => input.map((line) => line.split(
 export const toGridNumber = (input, separator = "") => input.map((line) => line.split(separator).map((col) => col / 1));
 
 export const fillGrid = (size, val) => Array(size).fill().map(() => Array(size).fill(val));
+export const fillGridXY = (xSize, ySize, val) => Array(xSize).fill().map(() => Array(ySize).fill(val));
 
 export const findStart = (grid, val) => {
     let pos = [];
-    grid.some((line, lineIndex) => {
+    grid.some((line, lineIndex) =>
         line.some((cell, colIndex) => {
             if (cell == val) {
                 pos = [lineIndex, colIndex];
                 return true;
             }
         })
-    });
+    );
     return pos;
 }
 
