@@ -16,7 +16,7 @@ Novembre 2019 : [Battle Dev](https://battledev.blogdumoderateur.com/) ([solution
 
 17 Novembre 2019 : Google [kickstart](https://codingcompetitions.withgoogle.com/kickstart) (Round H) - entraînement
 
-Janvier 2020 : Facebook [HackerCup](https://www.facebook.com/pg/hackercup/events/?ref=page_internal)
+jan 2020 : Facebook [HackerCup](https://www.facebook.com/pg/hackercup/events/?ref=page_internal)
 
-Mars 2020 : [Battle Dev](https://battledev.blogdumoderateur.com/) ([solutions anciens exercices](https://www.isograd.com/FR/solutionconcours.php))
+mar 2020 : [Battle Dev](https://battledev.blogdumoderateur.com/) ([solutions anciens exercices](https://www.isograd.com/FR/solutionconcours.php))
 
