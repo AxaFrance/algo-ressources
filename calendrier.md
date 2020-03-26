@@ -18,5 +18,10 @@ Novembre 2019 : [Battle Dev](https://battledev.blogdumoderateur.com/) ([solution
 
 jan 2020 : Facebook [HackerCup](https://www.facebook.com/pg/hackercup/events/?ref=page_internal)
 
+20 Février 2020 : [hashCode](https://codingcompetitions.withgoogle.com/hashcode/schedule)
+
 mar 2020 : [Battle Dev](https://battledev.blogdumoderateur.com/) ([solutions anciens exercices](https://www.isograd.com/FR/solutionconcours.php))
 
+Mars 2020 : [Kickstart](https://codingcompetitions.withgoogle.com/codejam) Enregistrements
+
+3 Avril 2020 : [CodeJam](https://codingcompetitions.withgoogle.com/codejam/schedule) Qualifications
