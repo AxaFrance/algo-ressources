@@ -1,6 +1,7 @@
+# Code original avec lequel j'ai passé l'exo
+
 import sys
 import random
-
 
 lines = []
 for line in sys.stdin:
