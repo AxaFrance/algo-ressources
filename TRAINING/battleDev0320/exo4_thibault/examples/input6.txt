@@ -1,0 +1,3 @@
+10
+plante eau sol glace poison sol feu sol sol vol
+feu eau sol feu plante sol sol plante sol plante
