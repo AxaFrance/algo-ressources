@@ -4,6 +4,8 @@ Les examples de cet exercice sont nuls ! A tel point qu'ils ne l'ont pas mis en 
 
 ![Screenshot](./isograd_screenshot.JPG)
 
+J'ai quand même le sujet si vous voulez essayer. [pokemon_cheat_0196_fr.pdf](pokemon_cheat_0196_fr.pdf)
+
 ## Hiérarchie des types / Qui bat qui ?
 
 Ca ne suit pas du tout les ordres originels.
@@ -26,7 +28,7 @@ Ca ne suit pas du tout les ordres originels.
 Les exemples 1, 4 et 7 ne correspondent pas aux conditions données dans le sujet. J'ai l'impression que la hiérarchie des types a été changé en cours de conception de l'exercice.
 Pour les autres exemples, je pense qu'ils sont bons.
 
-### Example 1
+### [Example 1](./examples/input1.txt)
 
 C'est l'exemple du sujet, il ne marche pas si on suit les conditions données.
 La solution proposée est : `eau, plante, vol`
@@ -68,7 +70,7 @@ La solution proposée est : `eau, plante, vol`
 
 On voit que c'est Sacha qui gagne avec cette configuration.
 
-### Example 4
+### [Example 4](./examples/input4.txt)
 
 #### Tour 1
 
@@ -111,7 +113,7 @@ On voit que c'est Sacha qui gagne avec cette configuration.
 
 Comme dit dans l'énoncé, on ne gagne pas par KO mutuel.
 
-### Example 7
+### [Example 7](./examples/input7.txt)
 
 #### Tour 1
 
