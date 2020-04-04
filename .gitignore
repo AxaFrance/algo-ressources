@@ -1,5 +1,8 @@
 .DS_Store
 
+# Intellij
+.idea/*
+
 #JAVA TOOLS
 TOOLS/Java/WorkspaceEclipseMDF/\.metadata/
 TOOLS/Java/WorkspaceEclipseMDF/\.recommenders/
