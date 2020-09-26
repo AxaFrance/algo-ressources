@@ -32,20 +32,47 @@ fun parseLine(input: String): Slot {
 /**
  * @return true if it has merged 2 slots and false otherwise
  */
-fun mergeNext(slots: TreeMap<Int, Slot>, getKey: (Slot) -> Int): Boolean {
+fun mergeNext(slotsKeyStart: TreeMap<Int, Slot>, slotsKeyEnd: TreeMap<Int, Slot>): Boolean {
     var previous: Slot? = null
-    for (currentEntry in slots.entries) {
+    for (currentEntry in slotsKeyStart.entries) {
         val current = currentEntry.value
         if (previous == null) {
             previous = current
             continue
         }
         if (current.start - previous.end < 60) {
-            slots.remove(previous.start)
-            slots.remove(current.start)
+            slotsKeyStart.remove(previous.start)
+            slotsKeyStart.remove(current.start)
+            slotsKeyEnd.remove(previous.end) // Ca ne prend pas en compte les potentielles collisions, plusieurs réunions peuvent commencer en même temps
+            slotsKeyEnd.remove(current.end)
+
             val start = if (previous.start < current.start) previous.start else current.start
             val end = if (current.end > previous.end) current.end else previous.end
-            slots[start] = Slot(previous.day, start, end)
+            val newSlot = Slot(previous.day, start, end)
+            slotsKeyStart[newSlot.start] = newSlot
+            slotsKeyEnd[newSlot.end] = newSlot
+            return true
+        }
+        previous = current
+    }
+    previous = null
+    for (currentEntry in slotsKeyEnd.entries) {
+        val current = currentEntry.value
+        if (previous == null) {
+            previous = current
+            continue
+        }
+        if (current.start - previous.end < 60) {
+            slotsKeyStart.remove(previous.start)
+            slotsKeyStart.remove(current.start)
+            slotsKeyEnd.remove(previous.end) // Ca ne prend pas en compte les potentielles collisions, plusieurs réunions peuvent commencer en même temps
+            slotsKeyEnd.remove(current.end)
+
+            val start = if (previous.start < current.start) previous.start else current.start
+            val end = if (current.end > previous.end) current.end else previous.end
+            val newSlot = Slot(previous.day, start, end)
+            slotsKeyStart[newSlot.start] = newSlot
+            slotsKeyEnd[newSlot.end] = newSlot
             return true
         }
         previous = current
@@ -54,17 +81,18 @@ fun mergeNext(slots: TreeMap<Int, Slot>, getKey: (Slot) -> Int): Boolean {
 }
 
 fun mergeSlotsForDay(slots: List<Slot>): List<Slot> {
-    val tempSlots = TreeMap(slots.map { it.start to it }.toMap())
+    val slotsKeyStart = TreeMap(slots.map { it.start to it }.toMap())
+    val slotsKeyEnd = TreeMap(slots.map { it.end to it }.toMap())
     val day = slots.first().day
-    tempSlots[dayStart - 1] = Slot(day, dayStart - 1, dayStart)
-    tempSlots[dayEnd] = Slot(day, dayEnd, dayEnd + 1)
+    slotsKeyStart[dayStart - 1] = Slot(day, dayStart - 1, dayStart)
+    slotsKeyStart[dayEnd] = Slot(day, dayEnd, dayEnd + 1)
 
     var hasMerged = true
     while (hasMerged) {
-        hasMerged = mergeNext(tempSlots)
+        hasMerged = mergeNext(slotsKeyStart, slotsKeyEnd)
     }
 
-    return tempSlots.values.toList()
+    return slotsKeyStart.values.toList()
 }
 
 fun main(args: Array<String>) {
