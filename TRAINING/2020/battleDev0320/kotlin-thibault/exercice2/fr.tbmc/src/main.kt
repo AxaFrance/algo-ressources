@@ -9,7 +9,7 @@ import kotlin.text.*
 
 fun main(args : Array<String>) {
     val input = generateSequence(::readLine)
-    val lines = input.drop(0)
+    val lines = input.drop(1)
 
     var greatestNumberOfRepeat = 0
     var repeats = 0
