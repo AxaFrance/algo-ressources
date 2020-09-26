@@ -10,7 +10,7 @@ import kotlin.text.*
 fun main(args : Array<String>) {
     val input = generateSequence(::readLine)
     val result = input
-            .drop(0)
+            .drop(1)
             .groupBy { it.toLowerCase() }
             .map { it.key to it.value.size }
             .toList()
