@@ -140,55 +140,7 @@ data class Deck(val cardList: List<PogemonType>) {
         return cardList[index]
     }
 
-    private fun selectCardWhenMineIsNullFromCardsAllowed(
-            otherDeck: Deck,
-            index: Int,
-            cardsAllowed: HashSet<PogemonType>,
-            myRemainingCardMap: Map<PogemonType, Int>):
-            Pair<PogemonType, List<PogemonType>>? {
-
-        if (!myRemainingCardMap.hasRemainingValues())
-            return null
-
-        val cards = cardsAllowed.intersect(myRemainingCardMap.keys)
-
-        if (cards.isEmpty())
-            return null
-
-        for (card in cards) {
-            val numberOfThisTypeCard = myRemainingCardMap[card]
-
-            if (numberOfThisTypeCard == null || numberOfThisTypeCard < 1)
-                continue
-
-            val nextRemainingCardMap = if (numberOfThisTypeCard == 1) myRemainingCardMap - setOf(card) else myRemainingCardMap + (card to (numberOfThisTypeCard - 1))
-            val nextList = selectToWinAgainstThisCard(otherDeck, index, card, nextRemainingCardMap)
-
-            if (nextList != null)
-                return card to nextList
-        }
-
-        return null
-    }
-
-    private fun selectCardWhenMineIsNull(otherDeck: Deck, index: Int, myRemainingCardMap: Map<PogemonType, Int>): List<PogemonType>? {
-        val currentOpponentCard = otherDeck[index]!!
-
-        val bestFightTypes = WhoWin.bestFightForType.getValue(currentOpponentCard)
-
-        var result = selectCardWhenMineIsNullFromCardsAllowed(otherDeck, index, bestFightTypes.looseAgainst, myRemainingCardMap)
-        if (result == null) {
-            result = selectCardWhenMineIsNullFromCardsAllowed(otherDeck, index, bestFightTypes.tieAgainst, myRemainingCardMap)
-            if (result == null) {
-                result = selectCardWhenMineIsNullFromCardsAllowed(otherDeck, index, bestFightTypes.winAgainst, myRemainingCardMap)
-                        ?: return null // here this path is dead
-            }
-        }
-        val (currentCard, cardListAfterCurrent) = result
-        return cardListAfterCurrent + currentCard
-    }
-
-    private fun selectToWinAgainstThisCard(otherDeck: Deck, index: Int, myCurrentCard: PogemonType?, myRemainingCardMap: Map<PogemonType, Int>): List<PogemonType>? {
+    private fun solveThisCard(otherDeck: Deck, index: Int, myCurrentCard: PogemonType?, myRemainingCardMap: Map<PogemonType, Int>): List<PogemonType>? {
         val currentOpponentCard = otherDeck[index]
 
         if (currentOpponentCard == null) {
@@ -198,22 +150,30 @@ data class Deck(val cardList: List<PogemonType>) {
         }
 
         if (myCurrentCard == null) {
-            return selectCardWhenMineIsNull(otherDeck, index, myRemainingCardMap)
+            if (!myRemainingCardMap.hasRemainingValues())
+                return null
+            for ((card, numberOfThisCard) in myRemainingCardMap) {
+                val nextRemainingCardMap = if (numberOfThisCard == 1) myRemainingCardMap - setOf(card) else myRemainingCardMap + (card to (numberOfThisCard - 1))
+                val result = solveThisCard(otherDeck, index, card, nextRemainingCardMap)
+                if (result != null)
+                    return result + card
+            }
+            return null
         }
 
         return when (WhoWin.fightAgainst(myCurrentCard, currentOpponentCard)) {
-            FightResult.Win -> selectToWinAgainstThisCard(otherDeck, index + 1, myCurrentCard, myRemainingCardMap)
-            FightResult.Tie -> selectToWinAgainstThisCard(otherDeck, index + 1, null, myRemainingCardMap)
-            FightResult.Loose -> selectToWinAgainstThisCard(otherDeck, index, null, myRemainingCardMap)
+            FightResult.Win -> solveThisCard(otherDeck, index + 1, myCurrentCard, myRemainingCardMap)
+            FightResult.Tie -> solveThisCard(otherDeck, index + 1, null, myRemainingCardMap)
+            FightResult.Loose -> solveThisCard(otherDeck, index, null, myRemainingCardMap)
         }
     }
 
     /**
      * @return list of pogemon to win over otherDeck or null otherwise
      */
-    fun solveAgainst(otherDeck: Deck): List<PogemonType>? {
+    fun solveAgainstAnotherDeck(otherDeck: Deck): List<PogemonType>? {
         val myCardMap = cardList.groupBy { it }.mapValues { (_, list) -> list.size }
-        return selectToWinAgainstThisCard(otherDeck, 0, null, myCardMap)
+        return solveThisCard(otherDeck, 0, null, myCardMap)
     }
 }
 
@@ -234,7 +194,7 @@ fun main(args: Array<String>) {
             }
             .map { Deck(it) }
             .toList()
-    val result = mineCards.solveAgainst(sachaCards)
+    val result = mineCards.solveAgainstAnotherDeck(sachaCards)
     if (result == null) {
         println("-1")
     } else {
