@@ -4,10 +4,8 @@
  * Use: System.err.println to output debugging information to STDERR.
  * ***/
 import kotlin.collections.HashMap
-import kotlin.collections.HashSet
 import kotlin.text.*
 
-// todo: découper en plus petit problèmes
 
 enum class FightResult {
     Win,
@@ -59,12 +57,6 @@ fun Map<PogemonType, Int>.toRemainingList(): ArrayList<PogemonType> {
 
 data class Fight(val card1: PogemonType, val card2: PogemonType, val winner: PogemonType)
 
-data class BestFightForType(val type: PogemonType) {
-    val winAgainst = HashSet<PogemonType>()
-    val tieAgainst = HashSet<PogemonType>()
-    val looseAgainst = HashSet<PogemonType>()
-}
-
 object WhoWin {
     private val fightList = listOf(
             Fight(PogemonType.Fire, PogemonType.Water, PogemonType.Water),
@@ -81,8 +73,6 @@ object WhoWin {
 
     private val fights = HashMap<PogemonType, HashMap<PogemonType, Boolean>>(fightList.size * 2) // Type1, Type2, Type1 win?
 
-    val bestFightForType = HashMap<PogemonType, BestFightForType>()
-
     /**
      * @return true if my card win,
      */
@@ -94,41 +84,13 @@ object WhoWin {
     init {
         val pogemonTypes = PogemonType.values()
 
-        // Init fight list
         for (type in pogemonTypes) {
             fights[type] = HashMap()
-            bestFightForType[type] = BestFightForType(type)
         }
 
         for ((firstType, secondType, winnerType) in fightList) {
             fights[firstType]!![secondType] = firstType == winnerType
             fights[secondType]!![firstType] = secondType == winnerType
-        }
-
-        // Init win against list and tie against list
-        for (pogemon in pogemonTypes) {
-            for (other in pogemonTypes) {
-                if (pogemon == other)
-                    continue
-
-                val pogemonBestFight = bestFightForType.getValue(pogemon)
-                val otherBestFight = bestFightForType.getValue(other)
-
-                when (fightAgainst(pogemon, other)) {
-                    FightResult.Win -> {
-                        pogemonBestFight.winAgainst.add(other)
-                        otherBestFight.looseAgainst.add(pogemon)
-                    }
-                    FightResult.Tie -> {
-                        pogemonBestFight.tieAgainst.add(other)
-                        otherBestFight.tieAgainst.add(pogemon)
-                    }
-                    FightResult.Loose -> {
-                        otherBestFight.winAgainst.add(pogemon)
-                        pogemonBestFight.looseAgainst.add(other)
-                    }
-                }
-            }
         }
     }
 }
@@ -178,11 +140,7 @@ data class Deck(val cardList: List<PogemonType>) {
 }
 
 fun main(args: Array<String>) {
-    val input = generateSequence(::readLine).toList()
-
-    System.err.println("====================")
-    System.err.println(input)
-    System.err.println("\n\n")
+    val input = generateSequence(::readLine)
 
     val (sachaCards, mineCards) = input
             .drop(1)
@@ -194,6 +152,7 @@ fun main(args: Array<String>) {
             }
             .map { Deck(it) }
             .toList()
+
     val result = mineCards.solveAgainstAnotherDeck(sachaCards)
     if (result == null) {
         println("-1")
