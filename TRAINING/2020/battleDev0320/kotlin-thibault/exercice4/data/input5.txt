@@ -1,0 +1,3 @@
+5
+plante feu glace glace eau
+sol eau glace vol vol
