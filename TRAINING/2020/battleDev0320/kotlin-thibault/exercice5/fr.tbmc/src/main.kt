@@ -17,25 +17,6 @@ fun String.containsPalindrome(start: Int = 0, end: Int = length - 1): Boolean {
     return true
 }
 
-/*
-private fun String.cutInPalindromes(): LinkedList<String> {
-    val palindromeList = LinkedList<String>()
-    var start = 0
-
-    for (end in 0 until length) {
-        if (start == end || containsPalindrome(start, end))
-            continue
-
-        val palindrome = substring(start, end)
-        palindromeList.add(palindrome)
-        start = end
-    }
-
-    palindromeList.add(substring(start, length - 1))
-    return palindromeList
-}
-*/
-
 data class PalindromePositions(val start: Int, val end: Int) {
     val size: Int
         get() = end - start
@@ -47,7 +28,7 @@ data class PalindromePositions(val start: Int, val end: Int) {
     }
 
     fun cutInPalindromes(): List<PalindromePositions>? {
-        if (size == 1)
+        if (size <= 1)
             return null
 
         val list = ArrayList<PalindromePositions>(3)
@@ -115,27 +96,8 @@ fun Set<PalindromePositions>.filterOverlappingPositions(): List<PalindromePositi
     return resultList.sortedBy { it.start }
 }
 
-/**
- * This string must be a palindrome or the behavior is undefined
- */
-fun String.cutPalindromeInPalindromes(): LinkedList<String>? {
-    if (length == 1)
-        return null
-
-    val list = LinkedList<String>()
-    list.add(first().toString())
-
-    if (length > 2) {
-        list.add(substring(1, lastIndex - 1))
-    }
-
-    list.add(last().toString())
-
-    return list
-}
-
 fun String.cutInNPalindromes(n: Int): List<PalindromePositions>? {
-    val palindromes = findLongestSubPalindromes().filterOverlappingPositions()
+    val palindromes = LinkedList(findLongestSubPalindromes().filterOverlappingPositions())
     if (palindromes.size > n)
         return null
     if (palindromes.size == n)
@@ -143,13 +105,14 @@ fun String.cutInNPalindromes(n: Int): List<PalindromePositions>? {
 
     whileLoop@ while (palindromes.size < n) {
         for ((index, palindrome) in palindromes.withIndex()) {
-            val newPalindromes = palindrome.cutPalindromeInPalindromes()
+            val newPalindromes = palindrome.cutInPalindromes()
             if (newPalindromes == null || palindromes.size + newPalindromes.size > n)
                 continue
             palindromes.removeAt(index)
             palindromes.addAll(index, newPalindromes)
             continue@whileLoop
         }
+
     }
 
     if (palindromes.size == n)
@@ -169,14 +132,5 @@ fun main(args: Array<String>) {
     if (palindromes == null)
         println("IMPOSSIBLE")
     else
-        println(palindromes.joinToString(" "))
-
-//    println("test1".containsPalindrome())
-//    println("texet".containsPalindrome())
-//    println("atestb".containsPalindrome(1, 4))
-//    println("zethjdoiutxtdsfdsf".containsPalindrome(9, 11))
-//    println("t".containsPalindrome())
-//    println("abc".containsPalindrome(1, 1))
-//    println("tt".containsPalindrome())
-//    println("attc".containsPalindrome(1, 2))
+        println(skewer.toPalindromeStrings(palindromes))
 }
