@@ -126,7 +126,7 @@ fun String.cutInNPalindromes(n: Int): List<PalindromePositions>? {
 fun String.toPalindromeStrings(positions: Iterable<PalindromePositions>) =
         positions.joinToString(" ") { substring(it) }
 
-fun main(args: Array<String>) {
+fun main() {
     val input = generateSequence(::readLine).toList()
     val (_, K) = input[0].split(" ").map { it.toInt() } // we must cut in K palindromes
     val skewer = input[1]
