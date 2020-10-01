@@ -19,7 +19,7 @@ fun String.containsPalindrome(start: Int = 0, end: Int = length - 1): Boolean {
 
 data class PalindromePositions(val start: Int, val end: Int) {
     val size: Int
-        get() = end - start
+        get() = end - start + 1
 
     fun overlap(other: PalindromePositions): Boolean {
         // Cannot be the same character in two different palindromes
@@ -56,23 +56,24 @@ fun String.expandPalindrome(start: Int, end: Int): PalindromePositions? {
     return expandPalindrome(start - 1, end + 1) ?: return PalindromePositions(start, end)
 }
 
-/**
- * This method is not perfect, but it will be perfect for this use case.
- * It doesn't find all palindromes. When two or more palindromes have the same
- * center and the same parity, it will juste keep the longest.
- * If two palindromes have the same center but different parity eg (even, odd), it will keep both.
- * For palindrome with even number of letter, the center will be at index `[length / 2 - 1]`.
- */
-fun String.findLongestSubPalindromes(): Set<PalindromePositions> {
-    val palindromes = HashSet<PalindromePositions>(length * 2)
+fun String.expandPalindromeToList(start: Int, end: Int): Set<PalindromePositions> {
+    val range = 0 until length
+
+    if (start !in range || end !in range)
+        return setOf()
+
+    if (!containsPalindrome(start, end))
+        return setOf()
+
+    return setOf(PalindromePositions(start, end)) + expandPalindromeToList(start - 1, end + 1)
+}
+
+fun String.findSubPalindromes(): Set<PalindromePositions> {
+    val palindromes = HashSet<PalindromePositions>(length * 5)
 
     for (i in 0 until length) {
-        var result = expandPalindrome(i, i + 1)
-        if (result != null)
-            palindromes.add(result)
-        result = expandPalindrome(i, i)
-        if (result != null)
-            palindromes.add(result)
+        palindromes.addAll(expandPalindromeToList(i, i + 1))
+        palindromes.addAll(expandPalindromeToList(i, i))
     }
     return palindromes
 }
@@ -98,7 +99,7 @@ fun Set<PalindromePositions>.filterOverlappingPositions(): List<PalindromePositi
 
 fun String.cutInNPalindromes(n: Int): List<PalindromePositions>? {
     // todo: le faire en filtrant les palindromes
-    val palindromes = LinkedList(findLongestSubPalindromes().filterOverlappingPositions())
+    val palindromes = LinkedList(findSubPalindromes().filterOverlappingPositions())
     if (palindromes.size > n)
         return null
     if (palindromes.size == n)
@@ -123,6 +124,39 @@ fun String.cutInNPalindromes(n: Int): List<PalindromePositions>? {
     return null
 }
 
+/*
+
+fun String.cutInNPalindromes(n: Int): String? {
+    val palindromes = findSubPalindromes()
+    val dp = (0..length).map { HashMap<Int, Int>() }
+    dp[0][0] = 0
+
+    for (pal in palindromes) {
+        for (k in dp[pal.start].keys) {
+            if (k < n)
+                dp[pal.end + 1][k + 1] = pal.start
+        }
+    }
+
+    if (n !in dp.last())
+        return null
+
+    val ls = ArrayList<Int>()
+    var ptr = length
+    for (k in n downTo 1) {
+        ls.add(dp[ptr][k]!!)
+        ptr -= dp[ptr][k]!!
+    }
+    ptr = 0
+    val result = ArrayList<String>()
+    for (ln in ls.reversed()) {
+        result.add(substring(ptr, ptr + ln))
+        ptr += ln
+    }
+    return result.joinToString(" ")
+}
+*/
+
 fun String.toPalindromeStrings(positions: Iterable<PalindromePositions>) =
         positions.joinToString(" ") { substring(it) }
 
@@ -134,5 +168,6 @@ fun main() {
     if (palindromes == null)
         println("IMPOSSIBLE")
     else
+        // println(palindromes)
         println(skewer.toPalindromeStrings(palindromes))
 }
