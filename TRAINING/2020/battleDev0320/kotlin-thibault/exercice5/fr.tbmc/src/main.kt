@@ -97,12 +97,14 @@ fun Set<PalindromePositions>.filterOverlappingPositions(): List<PalindromePositi
 }
 
 fun String.cutInNPalindromes(n: Int): List<PalindromePositions>? {
+    // todo: le faire en filtrant les palindromes
     val palindromes = LinkedList(findLongestSubPalindromes().filterOverlappingPositions())
     if (palindromes.size > n)
         return null
     if (palindromes.size == n)
         return palindromes
 
+    // todo: le problème ici, c'est qu'on arrive à 9 et qu'on ne peut faire des palindromes que en en rajoutant 2 et pas seulement 1
     whileLoop@ while (palindromes.size < n) {
         for ((index, palindrome) in palindromes.withIndex()) {
             val newPalindromes = palindrome.cutInPalindromes()
