@@ -39,7 +39,7 @@
     "watch": "1.0.2"
   },
   "dependencies": {
-    "lodash": "4.17.13"
+    "lodash": "4.17.21"
   },
   "jest": {
     "rootDir": "./",
