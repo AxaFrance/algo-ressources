@@ -18,6 +18,8 @@ import {
   flipMatrixCounterClockwise,
   rotateMatrix,
   rotateMatrixCounterClockwise,
+  toNumbers,
+  operateTwoArrs
 } from "./tools";
 const logs = (...args) => console.error(args);
 
