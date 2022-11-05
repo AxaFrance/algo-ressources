@@ -13,6 +13,7 @@ TOOLS/Java/WorkspaceEclipseMDF/mdf/bin/
 TOOLS/NodeJS/node_modules
 TOOLS/NodeJS/yarn-*
 TOOLS/NodeJS/yarn.lock
+TOOLS/NodeJS/package-lock.json
 TOOLS/NodeJS/dist/*
 TOOLS/NodeJS/src/examples/*
 !TOOLS/NodeJS/src/examples/.gitkeep
