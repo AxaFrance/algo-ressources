@@ -31,7 +31,7 @@ namespace BattleDev.Tests
             var consoleOutputWriter = new StringWriter(consoleOutputBuilder);
             Console.SetOut(consoleOutputWriter);
 
-            Program.Main();
+            Program.Main(Array.Empty<string>());
 
             string outputPath = Path.Combine(TestFileFolder, $"output{testNumber}.txt");
 
