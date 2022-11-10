@@ -11,6 +11,8 @@ Each file must be properly named :
 
 `[exerciesName]-[author].[language]`
 
-Each solution is store in a folder, this folder must be explicitly named to easily find the associated exercice.
+Each exercice is stored in a folder, this folder must be explicitly named to easily find the associated exercice.
 
-All this folder have to be store in a folder with the name of the associated contest. `OTHERS` folder contains all the exercices solved before the repository transition.
+All those folders have to be stored in a folder with the name of the associated contest. 
+
+The folder named `OTHERS` contains all the exercices solved before the repository refactoring.
