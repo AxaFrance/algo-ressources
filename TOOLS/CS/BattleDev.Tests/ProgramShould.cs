@@ -1,15 +1,15 @@
+using FluentAssertions;
 using System;
 using System.IO;
 using System.Text;
 using Xunit;
-using FluentAssertions;
 
 namespace BattleDev.Tests
 {
     public class ProgramShould
     {
         const string TestFileFolder = "IO";
-        [Theory(DisplayName = "Testing input")]
+        [Theory(DisplayName = "Testing input1")]
         [InlineData(1)]
         [InlineData(2)]
         [InlineData(3)]
@@ -31,7 +31,7 @@ namespace BattleDev.Tests
             var consoleOutputWriter = new StringWriter(consoleOutputBuilder);
             Console.SetOut(consoleOutputWriter);
 
-            Program.Main();
+            Program.Main(null);
 
             string outputPath = Path.Combine(TestFileFolder, $"output{testNumber}.txt");
 
