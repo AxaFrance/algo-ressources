@@ -23,8 +23,9 @@ const jsonContents = Object.values(fileGroup).map(([input, output]) => {
 });
 
 describe("tests", () => {
-    window.console.error = (log) => console.info(log);
-    window.console.errorArray = (...logs) => logs.forEach((log) => console.info(log));
+    let window = {};
+    _.set(window, "console.error", (log) => console.info(log));
+    _.set(window, "console.errorArray", (...logs) => logs.forEach((log) => console.info(log)));
 
     jsonContents.forEach(([input, outputs], i) => {
         test(`process test input${i+1}`, () => {
