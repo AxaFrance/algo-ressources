@@ -92,3 +92,50 @@ export const divideTwoArrsFloor = (arr1, arr2) => operateTwoArrs(arr1, arr2, (a,
 
 export const smallestInArr = arr => Math.floor(arr.sort(sortAsc)[0]);
 export const biggestInArr = arr => Math.floor(arr.sort(sortDesc)[0]);
+
+// http://homepage.math.uiowa.edu/~goodman/22m150.dir/2007/Permutation%20Generation%20Methods.pdf Heap method
+export function permutations(permutation) {
+    var length = permutation.length,
+        result = [permutation.slice()],
+        c = new Array(length).fill(0),
+        i = 1, k, p;
+  
+    while (i < length) {
+      if (c[i] < i) {
+        k = i % 2 && c[i];
+        p = permutation[i];
+        permutation[i] = permutation[k];
+        permutation[k] = p;
+        ++c[i];
+        i = 1;
+        result.push(permutation.slice());
+      } else {
+        c[i] = 0;
+        ++i;
+      }
+    }
+    return result;
+  }
+
+  function genererCombinaisons(tableau, tailleMin=0, tailleMax=tableau.length) {
+    let combinaisons = [];
+    for(let i = 0; i < 2**tableau.length; i++)
+    {
+        let combinaison = [];
+        let mask = i;
+        let nombresDeUn = i.toString(2).split`1`.length - 1;
+        if( nombresDeUn >= tailleMin && nombresDeUn <= tailleMax )
+        {
+            for(let j = 0; j < tableau.length; j++)
+            {
+                if(mask & 1)
+                {
+                    combinaison.push(tableau[j]);
+                }
+                mask = mask >> 1;
+            }
+            combinaisons.push(combinaison);
+        }
+    }
+    return combinaisons;
+}
