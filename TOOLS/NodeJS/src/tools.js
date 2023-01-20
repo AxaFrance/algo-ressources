@@ -139,3 +139,44 @@ export function permutations(permutation) {
     }
     return combinaisons;
 }
+
+function genererCombinaisonsBinaires(taille, tailleMin=0, tailleMax=taille) {
+    let combinaisons = [];
+    for(let i = 0; i < 2**taille; i++)
+    {
+        let tailleChaine = i.toString(2).length;
+        if( tailleChaine >= tailleMin && tailleChaine <= tailleMax )
+        {
+            combinaisons.push(i.toString(2));
+        }
+    }
+    return combinaisons;
+}
+
+function isValidPos(tableau2D, x, y)
+{
+    let tailleYMax = tableau2D.length;
+    let tailleXMax = tableau2D[0].length;
+    if(x >= 0 && x < tailleXMax && y >= 0 && y < tailleYMax)
+    {
+        return true;
+    }
+    return false;
+}
+
+function getCoordsVoisins(x, y, diagonales=true)
+{
+    let coords = [];
+    coords.push([x+1, y]);
+    coords.push([x, y+1]);
+    coords.push([x, y-1]);
+    coords.push([x-1, y]);
+    if(diagonales)
+    {
+        coords.push([x-1, y-1]);
+        coords.push([x+1, y+1]);
+        coords.push([x-1, y+1]);
+        coords.push([x+1, y-1]);
+    }
+    return coords;
+}
