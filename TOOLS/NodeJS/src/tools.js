@@ -93,6 +93,9 @@ export const divideTwoArrsFloor = (arr1, arr2) => operateTwoArrs(arr1, arr2, (a,
 export const smallestInArr = arr => Math.floor(arr.sort(sortAsc)[0]);
 export const biggestInArr = arr => Math.floor(arr.sort(sortDesc)[0]);
 
+export const maxInArr = arr => arr.reduce((a,v) => v>a?v:a, -Infinity); // Math.max(...enormeTableau) plante si le tableau est très grand, pas cette méthode
+export const minInArr = arr => arr.reduce((a,v) => v>a?a:v, Infinity);
+
 // http://homepage.math.uiowa.edu/~goodman/22m150.dir/2007/Permutation%20Generation%20Methods.pdf Heap method
 export function permutations(permutation) {
     var length = permutation.length,

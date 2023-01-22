@@ -1,0 +1,385 @@
+{
+    "2014 Battle Dev ESILV": [
+        "Détection de session",
+        "Localisation de cible",
+        "Score de Scrabble",
+        "Exploration robotisée"
+    ],
+    "2014 Battle Dev 42 Mai 2014": [
+        "Fizz Buzz Inversé",
+        "Détection de session",
+        "Localisation de cible",
+        "Score de Scrabble"
+    ],
+    "2014 Meilleur Dev de France Mai 2014": [
+        "Trivial Pursuit",
+        "Monopoly",
+        "Compression",
+        "Le centre de la matrice",
+        "Le mot le plus courant",
+        "Générateur de S-Séquences"
+    ],
+    "2014 Battle Dev RegionsJob - Juin 2014": [
+        "La carte manquante",
+        "La vitesse moyenne (OK)",
+        "Validation de RIB",
+        "Distance sur un réseau arborescent",
+        "The social network"
+    ],
+    "2014 Battle Dev RegionsJob - Nov 2014": [
+        "Sous-séquence",
+        "Bingo !",
+        "Pavés",
+        "Labyrinthe"
+    ],
+    "2015 Meilleur Dev de France Mars 2015": [
+        "Poker",
+        "Nuage de tags",
+        "Salesforce - Qualité de la base",
+        "Trending topics",
+        "Rallonges",
+        "Le jeu de la vie",
+        "Sables mouvants"
+    ],
+    "2015 Battle Dev RegionsJob - Mars 2015": [
+        "Années bissextiles",
+        "Format de mot de passe",
+        "Plus long facteur commun",
+        "Bataille navale",
+        "Notation polonaise",
+        "Plus grand carré"
+    ],
+    "2015 Battle Dev RegionsJob - Novembre 2015": [
+        "Moyenne du bulletin scolaire",
+        "TV",
+        "Scrabble",
+        "Logigraphes",
+        "Ronronnement",
+        "Centrale électrique"
+    ],
+    "2016 Meilleur Dev de France 2016": [
+        "Production de voitures Peugeot (Phase 1)",
+        "Snake (Phase 1)",
+        "Distributeur de friandises (Phase 1)",
+        "Pseudo XML pondéré (Phase 2)",
+        "Affiches de pub Peugeot (Phase 2)",
+        "Correction automatique (Phase 2)",
+        "Fibre optique (Phase finale)",
+        "Fibre optique II (Phase finale)"
+    ],
+    "2016 Meilleur Dev de France Mars 2016 (Groupe 2)": [
+        "Affiches de pub Peugeot (Phase 2)",
+        "Pseudo XML pondéré (Phase 2)",
+        "Correction automatique (Phase 2)"
+    ],
+    "2016 Meilleur Dev de France Mars 2016 (Finale)": [
+        "Fibre optique (Phase finale)",
+        "Fibre optique II (Phase finale)"
+    ],
+    "2016 Battle Dev RegionsJob - Mars 2016": [
+        "Mot le plus long",
+        "Surveillance",
+        "Détecteur de pipotron",
+        "Pylônes",
+        "Banderoles"
+    ],
+    "2016 Battle Dev RegionsJob - Novembre 2016": [
+        "Gants",
+        "Flocons",
+        "Topographie",
+        "Avalanches",
+        "Snowboarding"
+    ],
+    "2017 Developer Day Accenture - Mars 2017": [
+        "Les méthodes agiles",
+        "Chatbot",
+        "Cloud computing",
+        "Devops",
+        "Développement Mobile"
+    ],
+    "2017 Battle Dev RegionsJob - Mars 2017": [
+        "Test de recrutement",
+        "Les jeux du grenier",
+        "Plates-formes",
+        "Combat de chatons",
+        "Prise de la Pastille",
+        "La foire aux jeux"
+    ],
+    "2017 Meilleur Dev de France Septembre 2017 (Session 2)": [
+        "Salesforce Rollercoaster",
+        "Dodécagones empilés",
+        "Démineur"
+    ],
+    "2017 Meilleur Dev de France Septembre 2017 (Finale)": [
+        "Slalom en kayak",
+        "Slalom itéré"
+    ],
+    "2017 Meilleur Dev de France Septembre 2017 (Session 1)": [
+        "Les bureaux salesforce",
+        "Spirale",
+        "La bataille"
+    ],
+    "2017 Battle Dev RegionsJob -Novembre 2017": [
+        "La bataille",
+        "Prix le plus bas",
+        "Hydroponie",
+        "ADN",
+        "Pizzarama",
+        "Aventurier"
+    ],
+    "2018 Developer Day Accenture - Mars 2018": [
+        "Agents de sécurité",
+        "Arrosage d'une pelouse",
+        "Transactions",
+        "Reconnaissance faciale",
+        "Encryption d'un mot de passe",
+        "Allocation de serveurs"
+    ],
+    "2018 Battle Dev RegionsJob - Mars 2018": [
+        "Le meilleur restaurant",
+        "Buffet à volonté",
+        "Copains",
+        "Tri des crêpes",
+        "Tramways",
+        "Canards"
+    ],
+    "2018 Concours entrainement La Poste 2018": [
+        "Calcul du QI d'un groupe",
+        "Blockchain",
+        "Géométrie plane"
+    ],
+    "2018 Concours Credit Agricole - Septembre 2018": [
+        "Séance de fractionné",
+        "Annuaire des marées",
+        "Flèche orientable",
+        "Tangram",
+        "Makefile",
+        "Verrouillage Majuscules"
+    ],
+    "2018 Concours de selection La Poste - Septembre 2018": [
+        "Inventaire",
+        "Générateur de numéro de téléphones",
+        "Fresque réfléchie"
+    ],
+    "2018 Concours Orange - Septembre 2018": [
+        "Salon de l'agriculture",
+        "Les nombreux amis",
+        "Jeu du Président",
+        "Récolte de signatures",
+        "Réseau défaillant"
+    ],
+    "2018 Meilleur Dev de France Octobre 2018 (Session 12:00)": [
+        "Intérêts débiteurs",
+        "Saut à la perche",
+        "Petri"
+    ],
+    "2018 Meilleur Dev de France Octobre 2018 (Session 14:00)": [
+        "Tour de contrôle",
+        "Investissement cryptomonnaies",
+        "Pachinko"
+    ],
+    "2018 Meilleur Dev de France Octobre 2018 (Session 15:30)": [
+        "Carrefour",
+        "Bouquet du jour",
+        "Campagne électorale"
+    ],
+    "2018 Meilleur Dev de France Octobre 2018 (Session 17:00)": [
+        "Casino",
+        "Puissance 4",
+        "Statistiques"
+    ],
+    "2018 Meilleur Dev de France Octobre 2018 (Session 18:30)": [
+        "Foule à la plage",
+        "Descendance",
+        "Barrage fluvial"
+    ],
+    "2018 Meilleur Dev de France Octobre 2018 (Finale)": [
+        "Arbitrage",
+        "Hackathon"
+    ],
+    "2018 Battle Dev Hello Work - Novembre 2018": [
+        "Vente aux enchères",
+        "Mots magiques",
+        "Fonction mystérieuse",
+        "Professeur populaire",
+        "Professeur débordé",
+        " Fonction mystérieuse bis"
+    ],
+    "2019 Developer Day Accenture - Mars 2019": [
+        "Guerre des prix",
+        "Stockage d'images",
+        "Piste de ski",
+        "Authentification double facteur",
+        "Tondeuse connectée",
+        "Mise en production"
+    ],
+    "2019 Battle Dev Hello Work - Mars 2019": [],
+    "2019 Concours entrainement La Poste 2019": [
+        "Trading",
+        "Temple Maudit",
+        "Pharma'cop 2.0"
+    ],
+    "2019 Concours Orange Septembre 2019": [
+        "Empreinte de fichier",
+        "Casino Royal",
+        "Crapette",
+        "Robots perdus"
+    ],
+    "2019 Concours Crédit Agricole 2019": [
+        "Salle de sport",
+        "Charlotte et la chocolatinerie",
+        "Power Plant"
+    ],
+    "2019 Meilleur Dev de France Octobre 2019 (Session 12:40)": [
+        "Paintball",
+        "Magicartes attaque éclair",
+        "Cocktail"
+    ],
+    "2019 Meilleur Dev de France Octobre 2019 (Session 14:00)": [
+        "Saute brique",
+        "Tower Defense",
+        "Réservoir Dogs"
+    ],
+    "2019 Meilleur Dev de France Octobre 2019 (Session 15:20)": [
+        "Station service",
+        "Classe tes amis!  #BFF",
+        "Le Meilleur Date de France"
+    ],
+    "2019 Meilleur Dev de France Octobre 2019 (Session 16:40)": [
+        "Transport air",
+        "Les Carottes sont Cuites",
+        "Lutte des classements"
+    ],
+    "2019 Meilleur Dev de France Octobre 2019 (Session 18:00)": [
+        "Grand prix de Monaco",
+        "Asteroides",
+        "Grenouille agile"
+    ],
+    "2019 Dev Champion 2019": [
+        "Toboggan",
+        "Secours en mer",
+        "Oeuvre d'art",
+        "Touches boguées",
+        "Pic de fréquentation",
+        "Intersections"
+    ],
+    "2019 Battle Dev Hello Work - Novembre 2019": [
+        "Courte paille",
+        "Cadre Photo",
+        "Registered Jack 11",
+        "Poudre de perlimpinpin",
+        "Vieille carte",
+        "DevOps"
+    ],
+    "2020 Battle Dev Hello Work - Mars 2020": [
+        "Yaourts",
+        "Série de cartes",
+        "25 heures sur 25",
+        "Magicartes Évolution Platinium",
+        "Découpage de brochette",
+        "Déminage express"
+    ],
+    "2020 AXA Code contest 2020": [
+        "AXA Code Challenge"
+    ],
+    "2020 Coding Battle – Groupe BPCE": [
+        "Intrusion à l'usine",
+        "Casser le code",
+        "La fenêtre de tir",
+        "La clé secrète",
+        "Trouver le patron"
+    ],
+    "2020 Concours interne La Poste 2020": [
+        "Le produit ultime",
+        "Le prix du panier",
+        "Expéditions équilibrées"
+    ],
+    "2020 Battle Dev Hello Work - Novembre 2020": [
+        "BattleDev Nov 2020 - 1",
+        "BattleDev Nov 2020 - 2",
+        "BattleDev Nov 2020 - 3",
+        "BattleDev Nov 2020 - 4",
+        "BattleDev Nov 2020 - 5",
+        "BattleDev Nov 2020 - 6"
+    ],
+    "2020 Challenge de Code Crédit Agricole - Novembre 2020": [
+        "Bilan carbone d'un vol",
+        "Les débuts du covoiturage",
+        "Economies de chauffage",
+        "École Buissonnière"
+    ],
+    "2020 Concours Orange Décembre 2020": [
+        "Orange 2020 - 1",
+        "Orange 2020 - 2",
+        "Orange 2020 - 3",
+        "Orange 2020 - 4"
+    ],
+    "2021 Battle Dev Hello Work - Juin 2021": [
+        "BattleDev juin 2021 - 1 - Préparation minutieuse",
+        "BattleDev juin 2021 - 2 - Décollage !",
+        "BattleDev juin 2021 - 3 - Tetris Bot 1.0",
+        "BattleDev juin 2021 - 4 - Nettoyeur de l'espace",
+        "BattleDev juin 2021 - 5 - Ceinture d'astéroïdes",
+        "BattleDev juin 2021 - 6 - Expédition minière"
+    ],
+    "2021 Le Shaker CodingBattle 2021": [
+        "CodingBattle Le Shaker 2021 - 1 - Une histoire de couleur",
+        "CodingBattle Le Shaker 2021 - 2 - Gros tas de bouquins",
+        "CodingBattle Le Shaker 2021 - 3 - Oh la belle prise",
+        "CodingBattle Le Shaker 2021 - 4 -Dans de beaux draps",
+        "CodingBattle Le Shaker 2021 - 5 - Un cad(re)eau empoisonné",
+        "CodingBattle Le Shaker 2021 - 6 - Estimation de toile"
+    ],
+    "2021 Meilleur·e développeur·euse de La Poste 2021": [
+        "Meilleur.e Dev La Poste 2021 - 1 - Préhistoire",
+        "Meilleur.e Dev La Poste 2021 - 2 - Combat magique",
+        "Meilleur.e Dev La Poste 2021 - 3 - Décodage temporel"
+    ],
+    "2021 Concours Orange 2021": [
+        "Orange 2021 - 1 - La ferme familiale",
+        "Orange 2021 - 2 - Pré carré",
+        "Orange 2021 - 3 - Coccinelles et Champs de blé",
+        "Orange 2021 - 4 - La forêt mystérieuse"
+    ],
+    "2022 Challenge de code Dev'Week Crédit Agricole 2022": [
+        "Recrutement égal",
+        "Economies de papier",
+        "La randonnée à vélo",
+        "Angles droits"
+    ],
+    "2022 Le Shaker 2022 - Coding Battle": [
+        "Sac à dos",
+        "Attaque d'ours",
+        "Dans les étoiles",
+        "Champ de ronces",
+        "Recettes de baies",
+        "Échantillons d'eau salée"
+    ],
+    "2022 Challenge EI 2022": [
+        "Euro Informations 1",
+        "Euro Informations 2",
+        "Euro Informations 3",
+        "Euro Informations 4",
+        "Euro Informations 5"
+    ],
+    "2022 Tech Challenger - Session du 22 novembre": [
+        "Tech Challengers - Qualif 1 - 1",
+        "Tech Challengers - Qualif 1 - 2",
+        "Tech Challengers - Qualif 1 - 3"
+    ],
+    "2023 Tech Challenger - Session du 1er décembre": [
+        "Tech Challengers - Qualif 2 - 1",
+        "Tech Challengers - Qualif 2 - 2",
+        "Tech Challengers - Qualif 2 - 3"
+    ],
+    "2023 Tech Challenger - Session du 10 Janvier": [
+        "Tech Challengers - Qualif 3 - 1",
+        "Tech Challengers - Qualif 3 - 2",
+        "Tech Challengers - Qualif 3 - 3"
+    ],
+    "2023 Tech Challenger - Session du 19 Janvier": [
+        "Tech Challengers - Qualif 4 - 1",
+        "Tech Challengers - Qualif 4 - 2",
+        "Tech Challengers - Qualif 4 - 3"
+    ]
+}
