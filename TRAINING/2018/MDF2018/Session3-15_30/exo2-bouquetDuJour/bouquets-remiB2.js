@@ -5,7 +5,7 @@ import _ from "lodash";
 
 const logs = (...args) => console.error(args);
 
-import {sumArrs, substractTwoArrs} from "./tools.js";
+import {sumArrs, substractTwoArrs} from "./tools.js.js.js";
 
 //console.error( $variable );
 //return to send result
