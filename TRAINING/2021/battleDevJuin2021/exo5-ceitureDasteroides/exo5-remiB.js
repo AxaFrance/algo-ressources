@@ -17,6 +17,9 @@ function ContestResponse(){
         absorb += (i+a < asteroides.length) ? asteroides[i+a] : 0; // on décale la fenêtre d'absorption
         absorb -= asteroides[i];
     }
+
+    const maxInArr = arr => arr.reduce((a,v) => v>a?v:a, -Infinity);
+    
     console.log(
         // total de tous les astéroides - le max que l'on peut absorber au mieux
         eval(asteroides.join`+`) - maxInArr(listeCopy)
