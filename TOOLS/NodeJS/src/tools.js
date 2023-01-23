@@ -183,3 +183,49 @@ function getCoordsVoisins(x, y, diagonales=true)
     }
     return coords;
 }
+
+
+/*
+    Usage, il faut un graphe dirigé de cet acabit:
+    let graphe = {
+        "s": {"1": any, "3": any},
+        "1": {"2": any},
+        "2": {"3": any,"t": any},
+        "3": {"1": any,"4": any},
+        "4": {"2": any,"t": any},
+        "t": {}
+    };
+    J'ai laissé value disponible, si y a besoin de faire un filtre dessus
+    Ne pas hésiter à modifier pour les besoins de l'exercice
+
+    Retourne un chemin partant du départ vers la destination, ["s", "1", "2", "t"]
+    si aucun chemin, alors retourne un tableau vide
+*/
+function coursCheminParBfs(depart, destination, graphe) {
+    let queue = [[depart, [depart]]];
+    let visited = [depart];
+    let cheminFinal = [];
+    while(queue.length)
+    {
+        let [nomNoeud, cheminActuel] = queue.shift();
+        let noeud = graphe[nomNoeud];
+        let entries = Object.entries(noeud);
+        for(let i = 0; i < entries.length; i++)
+        {
+            let entry = entries[i];
+            let [key, value] = entry;
+            if(!visited.includes(key))
+            {
+                if(key == destination)
+                {
+                    cheminFinal = [...cheminActuel, key];
+                    queue = [];
+                    break;
+                }
+                visited.push(key);
+                queue.push([key, [...cheminActuel, key]]);
+            }
+        }
+    }
+    return cheminFinal;
+}
