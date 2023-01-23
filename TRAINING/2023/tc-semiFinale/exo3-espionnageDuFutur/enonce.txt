@@ -1,0 +1,14 @@
+Espionnage du futur.
+Pour espionner les faits et gestes des chrono-criminels vous lancez dans le passé des sondes spatiales automatisées. Chaque sonde suit un parcours infini répétitif, et attendra peut-être votre objectif (un chrono-parrain) connu dans un lointain futur. À vous de trouver à quel moment, mais attention, cela peut être dans très longtemps !
+Données
+Entrée
+Ligne 1 : 2 entiers séparés par des espaces indiquant les coordonnées à atteindre X et Y, sachant que les coordonnées de départ de la sonde sont 0,0 Ligne 2 : Une chaîne de caractères composées uniquement des lettres URDL. C'est la suite des étapes du parcours de la sonde. R correspond à X+1 (déplacement vers la droite), L à X-1 (vers la gauche), U à Y+1 (vers le haut) et D à Y-1 (vers le bas). Les valeurs numériques sont limitées à un entier signé sur 50 bits. La suite des étapes est au plus de taille 5000, quand la sonde arrive au bout elle recommence sans fin au début de la suite.
+Sortie
+Votre programme devra renvoyer sur la sortie standard un entier correspondant au numéro de la première étape dans le futur à laquelle elle arrive à la destination. Ainsi on renverra 0 si l'objectif est égal au point de départ, 1 si on l'atteint après le premier déplacement, etc... S'il n'y a pas de solution, on utilise la chaîne not possible en sortie. Note : le résultat est un entier positif ou nul limité à 62 bits, et peut donc potentiellement être très grand.
+Exemples
+Entrée
+21 43
+UUURRRDLUU
+Sortie
+104
+Le motif répété est le suivant: 3 étapes vers le haut, 3 étapes vers la droite, 1 vers le bas, 1 vers la gauche puis 2 vers le haut. En partant de (0,0), en répétant 10 fois le motif de 10 étapes et en faisant 4 étapes sur le onzième motif on arrive pour le première fois en (21, 43), à l'étape 104.

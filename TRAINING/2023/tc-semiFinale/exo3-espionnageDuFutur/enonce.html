@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./test.css">
+</head>
+
+<body>
+    <div style="padding: 3em;">
+    <h1 id="espionnage-du-futur">Espionnage du futur.</h1>
+    <p>Pour espionner les faits et gestes des chrono-criminels vous lancez dans le passé des sondes spatiales
+        automatisées. Chaque sonde suit un parcours infini répétitif, et attendra peut-être votre objectif (un
+        chrono-parrain) connu dans un lointain futur. À vous de trouver à quel moment, mais attention, cela peut être
+        dans très longtemps !</p>
+    <h2 id="données">Données</h2>
+    <h3 id="entrée">Entrée</h3>
+    <p><strong>Ligne 1</strong> : 2 entiers séparés par des espaces indiquant les coordonnées à atteindre <code>X</code>
+        et <code>Y</code>, sachant que les coordonnées de départ de la sonde sont <code>0,0</code></p>
+    <p><strong>Ligne 2</strong> : Une chaîne de caractères composées uniquement des lettres <code>URDL</code>. C'est la
+        suite des étapes du parcours de la sonde. <code>R</code> correspond à X+1 (déplacement vers la droite),
+        <code>L</code> à X-1 (vers la gauche), <code>U</code> à Y+1 (vers le haut) et <code>D</code> à Y-1 (vers le
+        bas).</p>
+    <p>Les valeurs numériques sont limitées à un entier signé sur 50 bits.</p>
+    <p>La suite des étapes est au plus de taille 5000, quand la sonde arrive au bout elle recommence sans fin au début
+        de la suite.</p>
+    <h3 id="sortie">Sortie</h3>
+    <p>Votre programme devra renvoyer sur la sortie standard un entier correspondant au numéro de la première étape dans
+        le futur à laquelle elle arrive à la destination. Ainsi on renverra <code>0</code> si l'objectif est égal au
+        point de départ, <code>1</code> si on l'atteint après le premier déplacement, etc... S'il n'y a pas de solution,
+        on utilise la chaîne <code>not possible</code> en sortie.</p>
+    <p>Note : le résultat est un entier positif ou nul limité à 62 bits, et peut donc potentiellement être très grand.
+    </p>
+    <h2 id="exemples">Exemples</h2>
+    <p>Entrée</p>
+    <pre><code>21 43
+UUURRRDLUU
+</code></pre>
+    <p>Sortie</p>
+    <pre><code>104
+</code></pre>
+    <p>Le motif répété est le suivant: 3 étapes vers le haut, 3 étapes vers la droite, 1 vers le bas, 1 vers la gauche
+        puis 2 vers le haut. En partant de (0,0), en répétant 10 fois le motif de 10 étapes et en faisant 4 étapes sur
+        le onzième motif on arrive pour le première fois en (21, 43), à l'étape 104.</p>
+    </div>
+</body>
+
+</html>
