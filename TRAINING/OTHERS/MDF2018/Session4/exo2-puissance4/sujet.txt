@@ -1,4 +1,0 @@
-comptage des points : pour chaque ligne, si 4 ou + (nommé X) pions d'une couleur sont alignés : + (X-3) points à la couleur
-pareil pour chaque colonne
-
-retour : J ou R ou NOBODY  <= le gagnant
